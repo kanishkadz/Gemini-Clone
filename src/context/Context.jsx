@@ -38,7 +38,7 @@ const ContextProvider = (props) => {
         let newResponseArray = newResponse2.split(" ");
         for(let i=0; i<newResponseArray.length; i++){
             const nextWord = newResponseArray[i];
-            delayPara(i, nextWord);
+            delayPara(i, nextWord+" ");
         }
         setLoading(false)
         setInput("")
