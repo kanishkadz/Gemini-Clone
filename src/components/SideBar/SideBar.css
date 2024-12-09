@@ -26,3 +26,11 @@
     color: grey;
     cursor: pointer;
 }
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .recent-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
