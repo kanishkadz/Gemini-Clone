@@ -79,7 +79,7 @@
     padding: 10px 20px;
     border-radius: 50px;
 }
-.search box img{
+.search-box img{
     width: 24px;
     cursor: pointer;
 }
@@ -90,4 +90,9 @@
     outline: none;
     padding: 8px;
     font-size: 18px;
+}
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap: 15px;   
 }
