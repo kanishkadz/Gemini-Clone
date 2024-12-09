@@ -27,6 +27,7 @@ const ContextProvider = (props) => {
 
       // Call the run function and ensure the response is handled properly
       const response = await run(input);
+      let newResponse ="";
 
       // Handle invalid response scenarios
       if (!response || typeof response !== "string") {
