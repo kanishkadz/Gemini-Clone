@@ -37,8 +37,8 @@ const Main = () => {
               <input type="text" placeholder='Enter a prompt here' />
               <div>
                 <img src={assets.gallery_icon} alt="" />
-                <img src={assets.gallery_icon} alt="" />
-                <img src={assets.gallery_icon} alt="" />
+                <img src={assets.mic_icon} alt="" />
+                <img src={assets.send_icon} alt="" />
               </div>
             </div>
           </div>
