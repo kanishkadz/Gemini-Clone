@@ -41,6 +41,9 @@ const Main = () => {
                 <img src={assets.send_icon} alt="" />
               </div>
             </div>
+            <p className="bottom-info">
+              Gemini may display inaccurate info, so double-check its responses.
+            </p>
           </div>
         </div>
     </div>
