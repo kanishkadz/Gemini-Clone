@@ -79,3 +79,15 @@
     padding: 10px 20px;
     border-radius: 50px;
 }
+.search box img{
+    width: 24px;
+    cursor: pointer;
+}
+.search-box input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
