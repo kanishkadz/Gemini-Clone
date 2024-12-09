@@ -13,10 +13,8 @@ const ContextProvider = (props) => {
     const [resultData, setResultData] = useState("");
 
     const onSent = async(prompt) => {
-        await run(prompt)
+        await run(input)
     }
-
-
 
     const contextValue = {
         prevPrompts, 
