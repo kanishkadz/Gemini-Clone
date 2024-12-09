@@ -15,43 +15,41 @@ const ContextProvider = (props) => {
     setTimeout(() => {
       setResultData((prev) => prev + nextWord);
     }, 75 * index);
-  }
+  };
 
   const newChat = () => {
-    setLoading(false)
-    setShowResult(false)
-
-  }
+    setLoading(false);
+    setShowResult(false);
+    setResultData("");
+    setInput("");
+    setRecentPrompt("");
+  };
 
   const onSent = async (prompt) => {
     try {
       setResultData("");
       setLoading(true);
       setShowResult(true);
-      let response;
-      if (prompt !== undefined){
-        response = await run(prompt);
-        setRecentPrompt(prompt)
-      } else {
-        setPrevPrompts(prev=>[...prev, input])
-        setRecentPrompt(input)
-        response = await run(input)
+
+      const currentPrompt = prompt !== undefined ? prompt : input;
+
+      if (currentPrompt.trim() === "") {
+        console.error("Prompt cannot be empty.");
+        setLoading(false);
+        return;
       }
-      setRecentPrompt(input);
-      setPrevPrompts(prev=>[...prev, input])
 
-      // Call the run function and ensure the response is handled properly
-      const response = await run(input);
-      let newResponse ="";
+      setPrevPrompts((prev) => [...prev, currentPrompt]);
+      setRecentPrompt(currentPrompt);
 
-      // Handle invalid response scenarios
+      const response = await run(currentPrompt);
+
       if (!response || typeof response !== "string") {
         console.error("Invalid response received from the API.");
         setLoading(false);
         return;
       }
 
-      // Process the response for formatting
       const responseArray = response.split("**");
       let formattedResponse = "";
 
@@ -66,7 +64,6 @@ const ContextProvider = (props) => {
       const formattedResponseWithLineBreaks = formattedResponse.split("*").join("<br>");
       const responseWords = formattedResponseWithLineBreaks.split(" ");
 
-      // Use delayPara to display the response word by word
       responseWords.forEach((word, index) => {
         delayPara(index, word + " ");
       });
@@ -90,7 +87,7 @@ const ContextProvider = (props) => {
     resultData,
     input,
     setInput,
-    newChat
+    newChat,
   };
 
   return <Context.Provider value={contextValue}>{props.children}</Context.Provider>;
