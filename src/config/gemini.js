@@ -1,8 +1,8 @@
-const {
+import {
     GoogleGenerativeAI,
     HarmCategory,
     HarmBlockThreshold,
-  } = require("@google/generative-ai");
+  } from "@google/generative-ai";
   
   const apiKey = "AIzaSyDVU670NMz5B6KkJdHvxiypCFSMzC0Hg_U";
   const genAI = new GoogleGenerativeAI(apiKey);
