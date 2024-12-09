@@ -22,19 +22,19 @@ const Main = () => {
               <p>How can I help you today?</p>
             </div>
             <div className="cards">
-              <div className="card">
+              <div className="card" onClick={() => setInput('Suggest beautiful places to see on an upcoming road trip')}>
                 <p>Suggest beautiful places to see on an upcoming road trip</p>
                 <img src={assets.compass_icon} alt="Compass Icon" />
               </div>
-              <div className="card">
+              <div className="card" onClick={() => setInput('Briefly summarize this concept: urban planning')}>
                 <p>Briefly summarize this concept: urban planning</p>
                 <img src={assets.bulb_icon} alt="Bulb Icon" />
               </div>
-              <div className="card">
+              <div className="card" onClick={() => setInput('Brainstorm team bonding activities for our work retreat')}>
                 <p>Brainstorm team bonding activities for our work retreat</p>
                 <img src={assets.message_icon} alt="Message Icon" />
               </div>
-              <div className="card">
+              <div className="card" onClick={() => setInput('Improve the reliability of the following code')}>
                 <p>Improve the reliability of the following code</p>
                 <img src={assets.code_icon} alt="Code Icon" />
               </div>
@@ -72,7 +72,7 @@ const Main = () => {
               <img src={assets.gallery_icon} alt="Gallery Icon" />
               <img src={assets.mic_icon} alt="Mic Icon" />
               {input && (
-                <img onClick={() => onSent()} src={assets.send_icon} alt="Send Icon" />
+                <img onClick={() => onSent(input)} src={assets.send_icon} alt="Send Icon" />
               )}
             </div>
           </div>
