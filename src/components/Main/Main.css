@@ -139,3 +139,11 @@
     background-size: 800px 50px;
     height: 20px;
 }
+@keyframes loader {
+    0%{
+        background-position: -800px;
+    }    
+    100%{
+        background-position: 800px 0px;
+    }
+}
