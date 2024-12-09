@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SideBar.css'
 import { assets } from '../../assets/assets'
 
 const SideBar = () => {
+    
+    const [extended, setExtended] = useState(false);
+    
   return (
     <div className='sidebar'>
         <div className="top">
             <img className='menu' src={assets.menu_icon} alt="" />
             <div className="new-chat">
                 <img src={assets.plus_icon} alt="" />
-                <p> New Chat </p>
+                {extended?<p> New Chat </p>:null}
             </div>
             <div className="recent">
                 <p className='recent-title'> Recent </p>
