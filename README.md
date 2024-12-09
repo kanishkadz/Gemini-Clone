@@ -9,7 +9,7 @@ This project is a **Gemini clone** developed using **React**, designed to replic
 - **Real-time Content Updates:** Fetches live data from external sources for dynamic updates
 - **Responsive UI:** Works seamlessly across web platforms and mobile devices
 - **User-Friendly Navigation:** Simple, easy-to-use interface with intuitive layout
-- **Authentication:** Includes login and registration functionality (if applicable)
+- **Authentication:** Includes login and registration functionality
 - **Interactive Elements:** Features such as likes, comments, and sharing options for engagement
 
 ---
@@ -17,8 +17,8 @@ This project is a **Gemini clone** developed using **React**, designed to replic
 ## 🛠️ Tech Stack
 
 - **Framework:** React
-- **Language:** JavaScript (with JSX)
-- **State Management:** React Context / Redux (if applicable)
+- **Language:** JavaScript
+- **State Management:** React Context / Redux
 - **API Integration:** Connects to an external API for dynamic content
 - **Platform Support:** Tested and optimized for both desktop and mobile web versions
 
