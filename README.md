@@ -22,5 +22,3 @@ This project is a **Gemini clone** developed using **React**, designed to replic
 - **API Integration:** Connects to an external API for dynamic content
 - **Platform Support:** Tested and optimized for both desktop and mobile web versions
 
----
-# Vercel: https://vercel.com/kanishkadzs-projects/gemini
