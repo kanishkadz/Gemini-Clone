@@ -33,7 +33,7 @@ const ContextProvider = (props) => {
 
       const currentPrompt = prompt !== undefined ? prompt : input;
 
-      if (currentPrompt.trim() === "") {
+      if (!currentPrompt.trim()) {
         console.error("Prompt cannot be empty.");
         setLoading(false);
         return;
@@ -44,8 +44,9 @@ const ContextProvider = (props) => {
 
       const response = await run(currentPrompt);
 
-      if (!response || typeof response !== "string") {
-        console.error("Invalid response received from the API.");
+      if (!response || response.startsWith("⚠️")) {
+        console.error("Invalid response received from the API. No data available.");
+        setResultData("⚠️ API Error: No data available. Try a different prompt.");
         setLoading(false);
         return;
       }
@@ -54,11 +55,7 @@ const ContextProvider = (props) => {
       let formattedResponse = "";
 
       responseArray.forEach((segment, index) => {
-        if (index % 2 === 0) {
-          formattedResponse += segment;
-        } else {
-          formattedResponse += `<b>${segment}</b>`;
-        }
+        formattedResponse += index % 2 === 0 ? segment : `<b>${segment}</b>`;
       });
 
       const formattedResponseWithLineBreaks = formattedResponse.split("*").join("<br>");
@@ -72,6 +69,7 @@ const ContextProvider = (props) => {
       setInput("");
     } catch (error) {
       console.error("Error while processing the prompt:", error);
+      setResultData("⚠️ An error occurred while processing your request.");
       setLoading(false);
     }
   };
